@@ -1,0 +1,49 @@
+===== Inicio =====
+npm init -y
+npm i
+npm i mongodb
+nodemon server.js
+verificar el funcionamiento
+http://localhost:8080/home
+http://localhost:8080/login
+
+
+import  ParsedArgs from "minimist"
+
+ npm i minimist
+npm install forever -g
+forever stopall
+forever list
+
+npm i @babel/cli @babel/core @babel/preset.env
+
+forever start server.js -p4000 -m cluster
+
+
+==== Fin =====
+
+
+
+
+
+
+
+intalar ..
+express
+express-handlebars
+socket.io
+npm i knex mysql sqlite3
+
+
+
+script
+""start" : "src/server.js"
+
+C:\xampp\mysql\bin>mysql -u root
+MariaDB [(none)]> show databases;
+MariaDB [(none)]> create database coderDB;
+ajustes  script package.json
+use coderDB; seleccionar base de datos
+show tables  ver tablas
+describe porductos; estructura de la tabla
+
