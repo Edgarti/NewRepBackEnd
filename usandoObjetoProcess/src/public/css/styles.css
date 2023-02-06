@@ -1,0 +1,8 @@
+.card{
+    color: blue;
+}
+
+.fontTitle{
+    font-family: 'orbi';
+    src: url('../fonts/Orbitron-Black.ttf');
+}
