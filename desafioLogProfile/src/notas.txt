@@ -1,0 +1,6 @@
+npm i log4js
+npm i -g artillery
+npm i -D artillery
+
+profiling
+

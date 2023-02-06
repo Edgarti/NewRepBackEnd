@@ -1,0 +1,12 @@
+[2023-02-06T11:50:33.153] [FATAL] errores - imprimendo nivel fatal
+[2023-02-06T11:50:33.153] [ERROR] errores - imprimendo nivel error
+[2023-02-06T11:57:27.036] [FATAL] errores - imprimendo nivel fatal
+[2023-02-06T11:57:27.036] [ERROR] errores - imprimendo nivel error
+[2023-02-06T12:13:17.058] [FATAL] errores - imprimendo nivel fatal
+[2023-02-06T12:13:17.058] [ERROR] errores - imprimendo nivel error
+[2023-02-06T12:30:44.153] [FATAL] errores - imprimendo nivel fatal
+[2023-02-06T12:30:44.153] [ERROR] errores - imprimendo nivel error
+[2023-02-06T15:18:57.269] [FATAL] errores - imprimendo nivel fatal
+[2023-02-06T15:18:57.269] [ERROR] errores - imprimendo nivel error
+[2023-02-06T15:45:49.274] [FATAL] errores - imprimendo nivel fatal
+[2023-02-06T15:45:49.274] [ERROR] errores - imprimendo nivel error
