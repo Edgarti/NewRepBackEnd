@@ -49,18 +49,37 @@ const objArguments = ParsedArgs( process.argv.slice(2), options);
 console.log(objArguments);
 
 const PORT = objArguments.port;
-const MODO = objArguments.mode;
-const numeroCpu = os.cpus.length;
+const MODO = objArguments.modo;
+const numeroCpu = os.cpus().length;
 
-if(MODO === "CLUSTER" && cluster.isPrimary){
-    for( let i=0; i< numeroCpu; i++){
+
+//logica cluster
+if(MODO === "CLUSTER" && cluster.isPrimary ){
+    const numCpus= os.cpus().length;
+    console.log(`numero de nucleos de procesadores ${numCpus}`)
+    for(let i=0 ; i<numCpus; i++ ){
         cluster.fork()
+       
     }
-    cluster.on("exit",()=>{
-        console.log(``)
-        cluster.fotk()
+    cluster.on('exit',(worker)=>{
+         console.log(` el proceso ${worker.process.pid} ha dejado de funcionar`);
+         cluster.fork();
     })
-}
+}else{
+//Express server
+const server = app.listen(PORT,()=>{
+    console.log(`listening on port  ${PORT} on process ${process.pid}`)
+});
+// if(MODO === "CLUSTER" || cluster.isPrimary){
+//     for( let i=0; i< numeroCpu; i++){
+//         console.log(`Worker ${process.pid} started`);
+//         cluster.fork()
+//     }
+//     cluster.on("exit",(worker, code, signal)=>{
+//         console.log(`Worker ${process.pid} died`)
+//         cluster.fork()
+//     })
+// }
 
 // Api routes
 app.use('/api/productos',productRouter);
@@ -83,22 +102,7 @@ log4js.configure({
     }
 });
 
-//logica cluster
-if(MODO === "cluster" && cluster.isPrimary){
-    const numCpus= os.cpus().length;
-    console.log(`numero de nucleos de procesadores ${numCpus}`)
-    for(let i=0 ; i<numCpus; i++ ){
-        cluster.fork();
-    }
-    cluster.on('exit',(worker)=>{
-         console.log(` el proceso ${worker.process.pid} ha dejado de funcionar`);
-         cluster.fork();
-    })
-}else{
-//Express server
-const server = app.listen(PORT,()=>{
-    console.log(`listening on port  ${PORT} on process ${process.pid}`)
-});
+
 
 log4js.configure({
     appenders:{
@@ -137,6 +141,36 @@ res.send("Proceso sin Compresion".repeat(15000))
 app.get("/info/saludoZip",compression(),(req,res)=>{
 res.send(" Proceso Con Compresion ".repeat(15000))
 })
+
+app.get("/randoms/:num",(req,res)=>{
+
+    console.log(`numero aleatorio ${req.params.num}`)
+    const num = parseInt(req.params.num)
+    console.log(`despues del parse: ${req.params.num}`)
+    const lis=[]
+    for(let n=0; n<num; n++){
+    let listaNumero = Math.floor(Math.random() * (num - 1 + 1) + 1);
+    console.log(`Numero aleratorio: ${listaNumero}`)
+    lis.push(listaNumero);
+    }
+    // res.render("randoms")
+    res.send((lis))
+});
+
+app.get("/randoms",(req,res)=>{
+
+  console.log("Calcular 1.000.000de números rando")
+
+  const num = 50000
+  const lis=[]
+  for(let n=0; n<num; n++){
+  let listaNumero = Math.floor(Math.random() * (num - 1 + 1) + 1);
+  console.log(`Numero aleratorio: ${listaNumero}`)
+  lis.push(listaNumero);
+
+  }
+  res.send((lis))
+});
 
 //Websocket server
 const io = new Server(server);

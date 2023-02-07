@@ -76,7 +76,7 @@ app.get("/randoms",(req,res)=>{
 
   console.log("Calcular 100.000.000 de números rando")
 
-  const num = 100000000
+  const num = 50000
   const lis=[]
   for(let n=0; n<num; n++){
   let listaNumero = Math.floor(Math.random() * (num - 1 + 1) + 1);

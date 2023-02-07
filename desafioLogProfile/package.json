@@ -9,7 +9,7 @@
     "start": "nodemon src/server.js",
     "create-tables": "node src/scripts/createTables.js",
     "start-fork": "node src/server.js 8081",
-    "start-cluster": "node src/server.js 8081 CLUSTER"
+    "start-cluster": "node src/server.js 8082 CLUSTER"
   },
   "keywords": [],
   "author": "",

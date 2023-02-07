@@ -1,5 +1,33 @@
+coder.gpyhv3
+
+
+git add .
+git commit -m "Desafio Proxy..."
+git push
+
+ 
+
+artillery quick --count 100 -n 20 http://localhost:8081?max=100000000 > result_fork.txt
+
+
+
 git remote add origin https://github.com/Edgarti/NewRepBackEnd.git
 git branch -M main
 git push -u origin main
 
 ====
+
+git add .
+git commit -m "Desafio Proxy..."
+git push
+
+F:\coderHouse_backend\NewRepBackEnd\desafioProxyNginx\src> 
+nodemon server.js
+http://localhost:8080/home
+
+
+node --inspect server.js
+chrome://inspect
+
+node --inspect server.js -p 8082 -m CLUSTER
+chrome://inspect
