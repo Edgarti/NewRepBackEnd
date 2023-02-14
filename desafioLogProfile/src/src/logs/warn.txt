@@ -184,3 +184,6 @@
 [2023-02-06T19:22:00.323] [FATAL] default - imprimendo nivel fatal
 [2023-02-06T19:22:00.325] [WARN] default - imprimendo nivel warn
 [2023-02-06T19:22:00.325] [ERROR] default - imprimendo nivel error
+[2023-02-06T20:24:34.280] [FATAL] default - imprimendo nivel fatal
+[2023-02-06T20:24:34.281] [WARN] default - imprimendo nivel warn
+[2023-02-06T20:24:34.281] [ERROR] default - imprimendo nivel error
