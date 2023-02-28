@@ -1,0 +1,8 @@
+{
+  "dependencies": {
+    "express": "^4.18.2",
+    "instal": "^0.0.1-security",
+    "mongoose": "^6.10.0",
+    "nodemon": "^2.0.20"
+  }
+}

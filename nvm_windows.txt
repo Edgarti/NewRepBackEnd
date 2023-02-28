@@ -1,0 +1,38 @@
+ node --version
+v18.14.0
+
+
+https://github.com/coreybutler/nvm-windows
+MAC Y LINUX: https://github.com/nvm-sh/nvm
+
+
+https://github.com/coreybutler/nvm-windows/releases/download/1.1.10/nvm-setup.zip
+
+
+nvm list
+node releases  // diferente versiones
+
+https://nodejs.org/en/download/releases/
+
+// instalar una version especifica
+nvm instal node@18.02
+
+cambiar version
+node use 13.7.0
+
+
+npm es un gestor de paquetes porque permite instalar
+paquetes de  terceros
+
+
+// instalar  otros paquetes difernte a npm ///
+npm i yarn -g
+
+/// instalar paquetes con yarn
+time yarn add express mongoose firebase
+
+// Instalar la ultima version
+ npm i npm@latest -g
+
+// instalar programas para desarrollo
+ npm i -D typescrip

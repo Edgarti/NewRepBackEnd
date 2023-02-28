@@ -1,0 +1,162 @@
+import mongoose from "mongoose";
+import { options } from "./options.js";
+
+export const connectMongoDB = ()=>{
+    mongoose.connect(options.mongo.url,(err)=>{
+        if(err) return console.log(`Hubo un error al conectarse a la base de datos ${err}`);
+        console.log("base de datos conectada")
+    })
+};
+
+mongoose.set('strictQuery', false);
+
+
+model...
+
+import mongoose from "mongoose";
+
+const userCollection = "users";
+
+const userSchema = new mongoose.Schema(
+    {
+        nombre:{
+            type:String,
+            required:true
+        },
+        apellido:{
+            type:String,
+            required:true
+        },
+        edad:{
+            type:Number,
+        },
+        email:{
+            type:String,
+            required:true,
+            unique:true
+        },
+        password:{
+            type:String,
+            required:true
+        }
+    },
+    {
+        timestamps:true
+    }
+);
+
+export const UserModel = mongoose.model(userCollection,userSchema);
+
+
+****datos persistencia - capa de datos
+  dbOperatios
+
+****services la logica de api get
+
+****routers es capa navegacion
+
+const router = express.Router();
+
+router.get("/",(reqq,res)=>{
+    res.send("bienvenido")
+})
+
+export {router};
+
+
+**conectar capa de servicio  con routerS
+
+
+
+
+
+==== iniciar un proyecto ======
+
+npm init -y     //crea el package.json crear proyecto node.js
+npm i express  // instalar express que es un servidor  y crea la carpeta node_module
+npm socket.io  // tecnologia es necesarios configurar el server y el cliente con esta tecnologia
+
+copiar el archivo .gitignore  //para no subir la carpeta node_module
+
+Add line de codigo "type": "module", en packeng.jso antes del tag script
+
+carpeta de configuraciones(config)
+capa presentacion(views)        integrada o por fuera  FrontEnd           view
+capa navegador(routes)          router .. definir rutas  para acceder   
+capa controller     
+capa servicio(services)         operaciones, validaciones, malla deguridad     logica de negocios
+capa dase de datos(dbOperations - models)    Tambien llamada de persistencia   operaciones sobre la base de datos
+
+npm i mongoose  // base de datos
+
+crear carpeta src 
+crear archivo server.js .. // en otros proyectos es el mismo app.js  o index.js
+
+ mkdir views,routes,config,services,dbOperations
+
+
+->config   
+coneccion mongo.. ir al portal mondodb atlas
+                  opcion Sign up google
+                  opcion conection
+                  opcion conection yor  aplications
+                  copiar ruta ..
+                  mongodb+srv://kitservi:<password>@codermongoatlas.n8dxdd1.mongodb.net/?retryWrites=true&w=majority
+                  cambiar  contraseña y add base de datos mongodb.net/XXXXXXX?retryWrites
+                  'mongodb+srv://kitservi:123@codermongoatlas.n8dxdd1.mongodb.net/capasDB?retryWrites=true&w=majority
+
+crear en conifg archivo para conecatr a la bas e de datos
+dbConnectio.js
+
+Probar el fucnonamiento..
+PS F:\coderHouse_backend\NewRepBackEnd\proyecto_base_capas\src> node server.js
+================================================dc..
+
+
+================ proyecto Usuarios CRUD ======================
+
+1-crear modelos capa de base de datos en la capa de dbOperatios
+    UserModel
+
+2-crear manager es usada para hacer todas las oepraciones sobre la base de datos o contenedores
+
+3-Crear servicios user.services
+
+4:crear las  rutas capa de navegacion
+    carpeta api ... contenedor de todas las apis
+    index.js    .. grupo de rutas principal
+
+5.conectar la capa de rutas a la capa de servicios
+   en user.router importar user.services
+
+6.Implementar controlador  crear funciones a recibir las peticiones y retornar la 
+  respuesta del servicio
+  capa que funciona entre
+
+
+7.agregar funciones api
+   -crear servicio
+   -manager
+   -controller crear otro controlador getusers
+   -llamar servicios  y pasar parametro  req.params.in
+   -incluir la ruta en user.router  router.get("/:id",userController.getuser)
+             
+
+
+const express = require('express')
+const app = express();
+const PORt = 8080;
+app.listen(PORT,() =>{
+    console.log(`Servidor escuchando en el puerto ${PORT}`)
+})
+
+app.get('/api/palabras/:num')
+api/palabras/2
+
+app.get('/',(req,res)=>{
+  res.json({
+    msg:'hola mundo'
+  })
+
+})
+

@@ -1,0 +1,134 @@
+import mongoose from "mongoose";
+import { options } from "./options.js";
+
+export const connectMongoDB = ()=>{
+    mongoose.connect(options.mongo.url,(err)=>{
+        if(err) return console.log(`Hubo un error al conectarse a la base de datos ${err}`);
+        console.log("base de datos conectada")
+    })
+};
+
+mongoose.set('strictQuery', false);
+
+
+model...
+
+import mongoose from "mongoose";
+
+const userCollection = "users";
+
+const userSchema = new mongoose.Schema(
+    {
+        nombre:{
+            type:String,
+            required:true
+        },
+        apellido:{
+            type:String,
+            required:true
+        },
+        edad:{
+            type:Number,
+        },
+        email:{
+            type:String,
+            required:true,
+            unique:true
+        },
+        password:{
+            type:String,
+            required:true
+        }
+    },
+    {
+        timestamps:true
+    }
+);
+
+export const UserModel = mongoose.model(userCollection,userSchema);
+
+
+****datos persistencia - capa de datos
+  dbOperatios
+
+****services la logica de api get
+
+****routers es capa navegacion
+
+const router = express.Router();
+
+router.get("/",(reqq,res)=>{
+    res.send("bienvenido")
+})
+
+export {router};
+
+
+**conectar capa de servicio  con routerS
+
+
+
+
+
+==== iniciar un proyecto ======
+
+npm init -y     //crea el package.json crear proyecto node.js
+npm i express  // instalar express que es un servidor  y crea la carpeta node_module
+npm socket.io  // tecnologia es necesarios configurar el server y el cliente con esta tecnologia
+
+copiar el archivo .gitignore  //para no subir la carpeta node_module
+
+Add line de codigo "type": "module", en packeng.jso antes del tag script
+
+carpeta de configuraciones(config)
+capa presentacion(views)        integrada o por fuera  FrontEnd           view
+capa navegador(routes)          router .. definir rutas  para acceder        
+capa servicio(services)         operaciones, validaciones, malla deguridad     logica de negocios
+capa dase de datos(dbOperations - models)       operaciones sobre la base de datos
+
+npm i mongoose  // base de datos
+
+crear carpeta src 
+crear archivo server.js .. // en otros proyectos es el mismo app.js  o index.js
+
+ mkdir views,routes,config,services,dbOperations
+
+
+->config   
+coneccion mongo.. ir al portal mondodb atlas
+                  opcion Sign up google
+                  opcion conection
+                  opcion conection yor  aplications
+                  copiar ruta ..
+                  mongodb+srv://kitservi:<password>@codermongoatlas.n8dxdd1.mongodb.net/?retryWrites=true&w=majority
+                  cambiar  contraseña y add base de datos mongodb.net/XXXXXXX?retryWrites
+                  'mongodb+srv://kitservi:123@codermongoatlas.n8dxdd1.mongodb.net/capasDB?retryWrites=true&w=majority
+
+crear en conifg archivo para conecatr a la bas e de datos
+dbConnectio.js
+
+
+================================================dc..
+
+
+
+
+
+
+const express = require('express')
+const app = express();
+const PORt = 8080;
+app.listen(PORT,() =>{
+    console.log(`Servidor escuchando en el puerto ${PORT}`)
+})
+
+app.get('/api/palabras/:num')
+api/palabras/2
+
+app.get('/',(req,res)=>{
+  res.json({
+    msg:'hola mundo'
+  })
+
+})
+
