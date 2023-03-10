@@ -1,0 +1,4 @@
+npm init -y
+npm i express
+"type": "module" package.json
+npm i  mongoose  
