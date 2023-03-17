@@ -1,0 +1,12 @@
+npm init -y  // crea packeng.json
+
+npm i express express-handlebars mongoose dotenv minimist
+
+mkdir model controllers routes views config
+
+en .env  variables globales y no enviar al repositorio
+
+en la carpeta config 
+
+
+

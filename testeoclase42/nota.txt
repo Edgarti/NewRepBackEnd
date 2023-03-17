@@ -1,0 +1,17 @@
+npm init -y
+npm i express
+"type": "module" package.json
+npm i  mongoose  
+
+npm i -g express-generator
+
+// documentar las api
+jsdoc .. configuracion a que servidor le hago la documentacion como se llama la documentacion
+si tiene descripcion .. los esquemas ...  como recibe el cliente  la informacion el objecto json
+
+npm i swagger-jsdoc 
+
+//
+swagger-ui-express
+crea una pagina y la configuracion de las api.. como es la 
+estructura de las apis y que campos retorna.

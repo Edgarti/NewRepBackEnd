@@ -8,8 +8,7 @@ const userSchema = new mongoose.Schema({
             required: true
         },
 
-        edad:{
-            type:Number
+        edad:{ type:Number
         },
         email:{
             type: String,
@@ -19,7 +18,6 @@ const userSchema = new mongoose.Schema({
 
         password:{
             type: String,
-     
         }
     },
     {
