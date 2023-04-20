@@ -1,0 +1,11 @@
+
+
+F:\coderHouse_backend\NewRepBackEnd\proyectofinal\cors\backend> npm i 
+
+mongo atlas
+conect..
+conect your aplication
+
+url: 'mongodb+srv://kitservi:React123@codermongoatlas.n8dxdd1.mongodb.net/capasDB?retryWrites=true&w=majorit
+
+colletions.. contenedor de las bases de datos
